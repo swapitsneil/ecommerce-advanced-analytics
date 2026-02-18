@@ -10,7 +10,7 @@ The goal is to simulate the responsibilities of a remote data analyst by:
 - Performing data cleaning and validation  
 - Writing analytical SQL queries for business insights  
 - Implementing advanced SQL techniques (CTEs, window functions, views, indexing)  
-- Evaluating operational performance and customer behavior  
+- Evaluating operational performance and customer behaviour  
 
 This project focuses purely on SQL analytics quality and structured problem-solving.
 
