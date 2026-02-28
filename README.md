@@ -1,29 +1,79 @@
-# Ecommerce Advanced Analytics (SQL Project)
-
-## Project Overview
-
-This project performs end-to-end business analysis on a real-world Brazilian e-commerce dataset using MySQL.
-
-The goal is to simulate the responsibilities of a remote data analyst by:
-
-- Designing a relational database schema  
-- Performing data cleaning and validation  
-- Writing analytical SQL queries for business insights  
-- Implementing advanced SQL techniques (CTEs, window functions, views, indexing)  
-- Evaluating operational performance and customer behaviour  
-
-This project focuses purely on SQL analytics quality and structured problem-solving.
+# 🚀 AI-Powered E-Commerce Executive Analytics Platform  
+### MySQL + Power BI + Gemini AI
 
 ---
 
-## Dataset
+## 📌 Project Overview
 
-Source: Olist Brazilian E-commerce Dataset (Kaggle)
+This project delivers a complete end-to-end analytics solution on the Brazilian Olist e-commerce dataset.
 
-Dataset Link:  
-https://www.kaggle.com/code/anshumoudgil/olist-ecommerce-analytics-quasi-poisson-poly-regs/input
+It combines:
 
-The dataset includes:
+- Advanced SQL analytics (MySQL 8.0)
+- AI-generated executive board reporting (Gemini 2.5 Flash-Lite)
+- Interactive executive dashboard (Power BI)
+- Revenue concentration & RFM analysis
+- Operational performance diagnostics
+- Query optimization & indexing
+
+The objective was not just to analyze data —  
+but to simulate real-world responsibilities of a remote data analyst and analytics engineer.
+
+This project moves beyond descriptive SQL and demonstrates business interpretation, performance optimization, and AI-driven executive storytelling.
+
+---
+
+## 🏗 Architecture
+
+```
+Raw Olist Dataset
+        ↓
+MySQL Relational Schema
+        ↓
+Analytical Views (vw_order_enriched, vw_customer_lifetime)
+        ↓
+Python AI Layer (Gemini 2.5)
+        ↓
+Executive Text Report (.txt)
+        ↓
+Power BI Executive Dashboard (.pbix)
+```
+
+---
+
+## 📂 Repository Structure
+
+```
+ecommerce-advanced-analytics/
+│
+├── powerbi/
+│   └── Olist E-Commerce Executive Analytics Dashboard.pbix
+│
+├── sql/
+│   └── ecommerce_analytics.sql
+│
+├── generated_report/
+│   └── sample_executive_report.txt
+│
+├── screenshots/
+│   └── (dashboard previews)
+│
+├── ai_analyst.py
+├── README.md
+├── .env.template
+└── requirements.txt
+```
+
+---
+
+## 🗄 Dataset
+
+Source: Olist Brazilian E-Commerce Dataset (Kaggle)
+
+Time Period Covered:  
+September 2016 – August 2018
+
+Entities included:
 
 - Customers
 - Orders
@@ -33,35 +83,34 @@ The dataset includes:
 - Products
 - Sellers
 - Geolocation
-- Category translation
-
-Time Period Covered:  
-September 2016 – August 2018
+- Category Translation
 
 ---
 
-## Tools Used
+## 🛠 Tools & Technologies
 
 - MySQL 8.0
 - MySQL Workbench
 - Window Functions
 - Common Table Expressions (CTEs)
-- Views
-- Index Optimization
+- Views & Index Optimization
 - Execution Plan Analysis (EXPLAIN)
+- Python
+- Google Gemini 2.5 Flash-Lite
+- Power BI (DAX + Data Modeling)
 
 ---
 
-## Database Design
+## 🧱 Database Design & Optimization
 
 The schema includes:
 
 - Proper primary and foreign key constraints
-- Order-level aggregation views
-- Customer lifetime aggregation views
-- Indexes to optimize joins and time-based queries
+- Order-level aggregation view (vw_order_enriched)
+- Customer lifetime aggregation view (vw_customer_lifetime)
+- Optimized join-heavy queries with indexes
 
-Key optimization indexes added:
+### Indexes Added
 
 - orders(order_purchase_timestamp)
 - orders(customer_id)
@@ -69,24 +118,22 @@ Key optimization indexes added:
 - order_items(product_id)
 - order_reviews(order_id)
 
-Execution plans were analyzed using EXPLAIN to validate index usage.
+Execution plans were validated using EXPLAIN to confirm index usage and reduce full table scans.
 
 ---
 
-## Data Cleaning & Validation
+## 🧹 Data Cleaning & Validation
 
-The following checks were performed:
-
-- NULL value validation (dates, prices, categories)
+- NULL value validation (dates, price, freight)
+- Datetime normalization using STR_TO_DATE (millisecond handling)
 - Duplicate review detection
-- Price and freight range validation
-- Datetime normalization using STR_TO_DATE with millisecond handling
-- Filtering NULL delivery dates in operational metrics
-- Order-level DISTINCT logic to prevent inflation from multi-item joins
+- Price & freight range validation
+- DISTINCT-based order-level aggregation to prevent row inflation
+- Delivery NULL filtering for accurate operational metrics
 
 ---
 
-## Core Business KPIs
+## 📊 Core Business KPIs
 
 ### Revenue & Growth
 
@@ -95,9 +142,10 @@ The following checks were performed:
 - Month-over-Month Growth %
 - Monthly Order Volume
 - Average Order Value
+- Revenue Per Customer
 
-Insight:
-Revenue growth is primarily driven by customer acquisition rather than repeat purchasing behavior.
+Insight:  
+Revenue growth is primarily driven by new customer acquisition rather than repeat purchasing behavior.
 
 ---
 
@@ -109,8 +157,8 @@ Revenue growth is primarily driven by customer acquisition rather than repeat pu
 - Customer Acquisition Trend
 - RFM Base Segmentation (Recency, Frequency, Monetary)
 
-Insight:
-Revenue is highly concentrated among top customers, while overall retention remains weak.
+Insight:  
+Revenue is highly concentrated among top customers, while retention remains structurally weak.
 
 ---
 
@@ -120,14 +168,14 @@ Revenue is highly concentrated among top customers, while overall retention rema
 - Late vs On-Time Review Impact (4.29 → 2.57 rating drop)
 - Average Delivery Days
 - Order Funnel (Purchase → Approved → Shipped → Delivered → Canceled)
-- Cancellation Rate by Product Category (order-level correct logic)
+- Cancellation Rate by Category
 
-Insight:
-Delivery delays significantly reduce customer satisfaction and represent operational risk.
+Insight:  
+Delivery delays significantly reduce customer satisfaction and present operational risk.
 
 ---
 
-### Product & Seller Insights
+### Product & Seller Intelligence
 
 - Top Revenue Categories
 - Category Rating vs Revenue Comparison
@@ -135,86 +183,125 @@ Delivery delays significantly reduce customer satisfaction and represent operati
 - Sellers with Low Ratings
 - Heavy vs Light Product Delivery Impact
 
-Insight:
-High-revenue categories maintain strong ratings, indicating product-market fit, but operational improvements are needed to sustain growth.
+Insight:  
+High-revenue categories maintain strong ratings, indicating product-market alignment, but operational improvements are needed for sustainable growth.
 
 ---
 
-## Advanced SQL Techniques Used
+## 🤖 AI Executive Reporting Layer
 
-- Common Table Expressions (CTEs)
-- Window Functions (ROW_NUMBER, NTILE, LAG)
-- Revenue concentration analysis
-- Cohort-style monthly customer grouping
+The project integrates Gemini 2.5 Flash-Lite to transform raw SQL metrics into a structured board-level memorandum.
+
+The Python layer:
+
+- Connects to MySQL
+- Extracts advanced KPIs
+- Converts decimals safely
+- Generates structured executive report
+- Outputs clean board-ready text file
+
+This simulates real-world AI-augmented analytics workflows.
+
+---
+
+## 📈 Power BI Executive Dashboard
+
+The Power BI dashboard includes:
+
+Page 1 – Executive Overview  
+- Total Revenue  
+- Total Orders  
+- Total Customers  
+- Repeat Rate %  
+- AOV  
+- Revenue Per Customer  
+- Monthly Revenue Trend  
+
+Page 2 – Strategic Diagnostics  
+- Customer Type Distribution  
+- Revenue Concentration  
+- Delivery Impact  
+- Operational Performance Indicators  
+
+The dashboard follows clean executive design principles:
+- White background
+- Consistent blue accent
+- Minimal clutter
+- KPI-focused layout
+
+---
+
+## 🔍 Advanced SQL Techniques Used
+
+- CTE chaining
+- Window functions (ROW_NUMBER, NTILE, LAG)
+- Revenue concentration modeling
+- Cohort-style customer grouping
+- RFM base modeling
 - Order-level distinct aggregations
-- Performance optimization with indexing
-- View-based analytical layer (vw_order_enriched, vw_customer_lifetime)
+- Index performance optimization
+- View-based analytical layer
 
 ---
 
-## Views Created
+## 📌 Key Strategic Insights
 
-### vw_order_enriched
-Provides order-level aggregated dataset for analytical queries.
-
-### vw_customer_lifetime
-Provides customer-level aggregation including:
-- Total Orders
-- Lifetime Value
-- First Order Date
-- Last Order Date
+- Repeat purchase rate is approximately 3%, indicating retention weakness.
+- Top 10% customers contribute ~37% of revenue, creating revenue concentration risk.
+- Late deliveries (~8%) significantly reduce review scores.
+- Revenue peaked during strong acquisition cycles but lacks repeat reinforcement.
+- Operational improvements in delivery can directly improve retention metrics.
 
 ---
 
-## Key Business Insights
+## 🔐 Environment Variables
 
-- Revenue growth is strong but driven primarily by new customers.
-- Repeat purchase rate is approximately 3%, indicating low retention.
-- Top 10% customers contribute ~37% of total revenue.
-- Late deliveries (~8%) reduce average review score from 4.29 to 2.57.
-- Revenue peaked in late 2017 during high acquisition periods.
-- Operational focus should shift toward improving delivery reliability and retention strategies.
+Copy `.env.template` and create `.env`.
 
----
+Required variables:
 
-## Performance Considerations
+- DB_HOST
+- DB_USER
+- DB_PASSWORD
+- DB_NAME
+- GEMINI_API_KEY
 
-- Indexes were added to optimize join-heavy queries.
-- Execution plans were validated using EXPLAIN.
-- DISTINCT logic was applied where necessary to prevent row inflation.
-- NULL delivery dates handled consistently in operational metrics.
+Environment variables are excluded from version control.
 
 ---
 
-## Future Enhancements
-
-- Full RFM segmentation with quintile scoring and labeled customer segments.
-- Power BI dashboard for executive visualization.
-- Retention cohort matrix with month-over-month survival analysis.
-- Predictive modeling for churn and revenue forecasting.
-
----
-
-## Repository Structure
-
-```
-ecommerce-advanced-analytics/
-│
-├── ecommerce_analytics.sql
-├── README.md
-└── (Power BI dashboard - upcoming)
-```
-
----
-
-## Project Objective
+## 🚀 Project Objective
 
 This project demonstrates the ability to:
 
-- Translate raw transactional data into structured business insights
-- Write production-ready SQL
-- Apply performance optimization techniques
+- Design relational database systems
+- Write production-grade SQL
+- Optimize query performance
+- Translate data into business strategy
+- Integrate AI into analytics workflows
+- Build executive-ready dashboards
 - Think from both analytical and operational perspectives
 
-This simulates real-world responsibilities of a remote data analyst role.
+This simulates real-world responsibilities of a remote data analyst / analytics engineer.
 
+---
+
+## 🔮 Future Enhancements
+
+- Full RFM quintile segmentation with labeled customer tiers
+- Cohort retention matrix
+- Predictive churn modeling
+- Revenue forecasting
+- Automated dashboard refresh pipeline
+- Deployment-ready architecture
+
+---
+
+## 👤 Author
+
+Swapitsneil  
+Data Analytics | SQL | Power BI | AI-Augmented Business Intelligence
+
+---
+
+If this project was useful or interesting, feel free to ⭐ the repository.
