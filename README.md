@@ -23,6 +23,18 @@ This project moves beyond descriptive SQL and demonstrates business interpretati
 
 ---
 
+## 📊 Dashboard Preview
+
+### Executive Overview – Page 1
+
+![Executive Dashboard Page 1](screenshots/dash1.png)
+
+### Strategic & Operational Analysis – Page 2
+
+![Executive Dashboard Page 2](screenshots/dash2.png)
+
+---
+
 ## 🏗 Architecture
 
 ```
