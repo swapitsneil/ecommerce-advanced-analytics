@@ -216,6 +216,34 @@ This simulates real-world AI-augmented analytics workflows.
 
 ---
 
+---
+
+## 🤖 Sample AI-Generated Executive Report
+
+Below is an excerpt from the AI-generated board memorandum produced using Gemini 2.5 Flash-Lite.
+
+This report is dynamically generated from real MySQL metrics.
+
+```
+ECOMMERCE EXECUTIVE ANALYSIS REPORT
+
+MEMORANDUM FOR THE BOARD OF DIRECTORS
+
+EXECUTIVE SUMMARY
+
+Total revenue generated during the observed period was 15.84 million, driven by 96,461 orders across 99,441 customers. While revenue performance remains strong, repeat purchase behavior remains structurally weak at approximately 3 percent, indicating high dependence on new customer acquisition.
+
+Revenue concentration analysis reveals that the top 10 percent of customers contribute approximately 37 percent of total revenue, exposing the business to retention risk. Operational diagnostics show that late deliveries, representing roughly 8 percent of fulfilled orders, significantly reduce customer satisfaction, with review scores dropping from 4.29 to 2.57.
+
+Strategic focus should shift toward improving delivery reliability and strengthening customer retention programs to protect long-term revenue stability.
+```
+
+Full report available in:
+
+`generated_report/sample_executive_report.txt`
+
+---
+
 ## 📈 Power BI Executive Dashboard
 
 The Power BI dashboard includes:
